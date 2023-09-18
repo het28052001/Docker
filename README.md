@@ -20,14 +20,17 @@ Follow these steps to set up and run the project : <br>
 3.Install FastAPI and Uvicorn: <br>
  ```python3 -m pip install fastapi uvicorn[standard] ``` <br>
 
+4.Create a docker image: <br>
+ ```sudo docker build -t my-python-app . ``` <br>
 
-4.Run the Docker container: <br>
- ```sudo docker run -p 8080:80 my-fastapi-app ``` <br>
 
-5.Install Docker compose: <br>
+5.Run the Docker container: <br>
+ ```sudo docker run -d -p 8080:80 my-python-app ``` <br>
+
+6.Install Docker compose: <br>
  ```sudo apt install docker-compose ``` <br>
  
-6.Run the Docker compose file: <br>
+7.Run the Docker compose file: <br>
  ```sudo docker-compose up ``` <br>
 
 ## Usage
