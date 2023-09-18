@@ -15,9 +15,11 @@ Follow these steps to set up and run the project : <br>
 
 2.Activate the virtual environment: <br>
  ```source bin/activate ``` <br>
+ 
 
 3.Install FastAPI and Uvicorn: <br>
  ```python3 -m pip install fastapi uvicorn[standard] ``` <br>
+
 
 4.Run the Docker container: <br>
  ```sudo docker run -p 8080:80 my-fastapi-app ``` <br>
