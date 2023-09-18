@@ -1,17 +1,17 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
 
-# Define the route path as a variable
-USERS_ROUTE = '/users/'
+# Create a Pydantic model to define the input data structure
+class Numbers(BaseModel):
+    num1: float
+    num2: float
 
-class UserDetails(BaseModel):
-    user_name: str
-
-@app.post(USERS_ROUTE)
-async def user_func(user: UserDetails):
-    if not user.user_name:
-        raise HTTPException(status_code=400, detail="User name is missing")
-    
-    return {'status': 'Success', 'message': f'Hi! Welcome to fx datalabs {user.user_name}'}
+# Define a route to handle addition
+@app.post("/add")
+async def add_numbers(numbers: Numbers):
+    num1 = numbers.num1
+    num2 = numbers.num2
+    result = num1 + num2, num1 - num2
+    return {"result": result}
